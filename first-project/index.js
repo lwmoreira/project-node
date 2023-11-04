@@ -8,7 +8,7 @@ app.use(express.json())
 
 const users = []
 
-const checkUserId = (request, response, next) => {
+const checkUserIdnew = (request, response, next) => {
 
     const { id } = request.params
 
@@ -44,7 +44,7 @@ app.post('/users', (request, response) => {
 
 })
 
-app.put('/users/:id', checkUserId, (request, response) => {
+app.put('/users/:id', checkUserIdnew, (request, response) => {
 
     
     const { name, age } = request.body
@@ -62,7 +62,7 @@ app.put('/users/:id', checkUserId, (request, response) => {
     return response.json(updatedUser)
 })
 
-app.delete('/users/:id', checkUserId, (request, response) => {
+app.delete('/users/:id', checkUserIdnew, (request, response) => {
 
   
     const index = request.userIndex
